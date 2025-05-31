@@ -36,21 +36,20 @@ app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 // Serve React build static files
 app.use(express.static(path.join(__dirname, 'public', 'dist')));
-
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public","dist", "index.html"));
+});
 
 
 
 // API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/upload", uploadRoutes);
-app.use("/api/contact", contactRoutes);
-app.use("/api/soil-testing", soilTestRoutes);
+app.use("/api/v1/contact", contactRoutes);
+app.use("/api/v1/soil-testing", soilTestRoutes);
 
 
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public","dist", "index.html"));
-});
 
 // Root endpoint
 app.get("/", (req, res) => {
