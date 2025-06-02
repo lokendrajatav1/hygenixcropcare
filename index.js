@@ -45,8 +45,8 @@ app.get("/", (req, res) => {
 // API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/upload", uploadRoutes);
-app.use("/api/v1/contact", contactRoutes);
-app.use("/api/v1/soil-testing", soilTestRoutes);
+app.use("/api/contact", contactRoutes);
+app.use("/api/soil-testing", soilTestRoutes);
 
 
 
